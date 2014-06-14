@@ -3,7 +3,7 @@ Contributors: TylerShaw
 Tags: Stylesheet, CSS, Specific, Page, Post
 Requires at least: 3.5
 Tested up to: 3.9.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 
 Adds a box allowing for the addition of page-specifc and post-specific CSS stylesheets. Reduces the need to edit and clutter up the style.css file.
 
@@ -68,6 +68,10 @@ Q. Is there some way to format the CSS in the box to be easier to read?
 A. Not really. I intend on adding a special CSS editor box to replace the plain textbox so that there will be nice indenting and syntax highlighting. It should make the editing process a little easier on the eyes.
 
 == Changelog ==
+
+v1.0.2
+
+- Fixed version number that was not updated properly.
 
 v1.0.1
 

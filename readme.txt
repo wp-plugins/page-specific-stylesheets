@@ -5,29 +5,26 @@ Requires at least: 3.5
 Tested up to: 3.9.1
 Stable tag: 1.0
 
-Adds a box allowing for the addition of page-specifc and post-specific CSS stylesheets. Reduces the needs to edit and clutter up the style.css file.
+Adds a box allowing for the addition of page-specifc and post-specific CSS stylesheets. Reduces the need to edit and clutter up the style.css file.
 
 == Description ==
 
-**What\'s It Do?**
+**What's It Do?**
 
 This plugin adds a box to your pages and posts allowing for page-specific or post-specific CSS stylesheets.
 
- 
 
 **Why Use It?**
 
-After developing quite a few WordPress websites, it seems to me that the style.css file gets bloated. If you add a style used on only one page, and then later that page is deleted, you\'re visitors now have to download those styles that aren\'t even used. It\'s wasteful, but maintaining a clean style.css file requires an active effort. This plugin solves that by attaching the these styles to the page of post, allowing them to be updated just like the content is and deleted with the page.
+After developing quite a few WordPress websites, it seems to me that the style.css file gets bloated. If you add a style used on only one page, and then later that page is deleted, you're visitors now have to download those styles that aren't even used. It's wasteful, but maintaining a clean style.css file requires an active effort. This plugin solves that by attaching the these styles to the page of post, allowing them to be updated just like the content is and deleted with the page.
 
 It keeps your style.css file clean and reduces unused style clutter.
 
- 
 
 **What About Efficiency?**
 
-There shouldn\'t be an issue with overhead from the plugin. Admin code is only executed in the admin panel and front end code is executed on the front end. If you\'re website has a large amount of page-specific styles within it that can be migrated into the plugin, it can boost performance by reduces the download size of your style.css file.
+There shouldn't be an issue with overhead from the plugin. Admin code is only executed in the admin panel and front end code is executed on the front end. If you're website has a large amount of page-specific styles within it that can be migrated into the plugin, it can boost performance by reducing the download size of your style.css file.
 
- 
 
 **Roadmap**
 
@@ -46,9 +43,8 @@ If you have a feature idea, suggest it.
 
 **Notes**
 
-*   Style data is NOT removed on uninstall to prevent accidental deletion of important styles. The options to purge this data automatically is on the Roadmap as seen above.
+*   Style data is NOT removed on uninstall to prevent accidental deletion of important styles. The options to purge this data automatically is on the Roadmap as seen above. The meta_key used is pss_style if you need to delete it manually.
 
- 
 
 == Installation ==
 
@@ -63,7 +59,7 @@ A. Simply install and activate the plugin. It will automatically add an addition
 
 Q. How do I add the CSS box to custom post type?
 
-A. As of version 1.0, you can\'t. This feature is on the to-do list for the near future.
+A. As of version 1.0, you can't. This feature is on the to-do list for the near future.
 
  
 
@@ -72,6 +68,13 @@ Q. Is there some way to format the CSS in the box to be easier to read?
 A. Not really. I intend on adding a special CSS editor box to replace the plain textbox so that there will be nice indenting and syntax highlighting. It should make the editing process a little easier on the eyes.
 
 == Changelog ==
+
+v1.0.1
+
+- Corrected random symbols scattered throughout the readme.txt.
+- Corrected some typos.
+- Added some additional information about meta data.
+
 v1.0.0
 
 - Initial release.

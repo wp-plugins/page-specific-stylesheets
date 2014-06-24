@@ -75,6 +75,30 @@ if(is_admin()) {
 	}
 	add_action('delete_post', 'pss_clean_deleted_post_meta');
 	
+	
+	// Include our CodeMirror files.
+	// This should not occur if CodeMirror is disabled by the filter.
+	function pss_add_cm_files() {
+		
+		$fancy_editor = apply_filters('pss_fancy_editor', true);
+		
+		if($fancy_editor === true) {
+		
+			wp_enqueue_script('pss_codemirror', plugins_url('codemirror/codemirror-compressed.js', __FILE__));
+			
+			wp_enqueue_script('pss_cm_setup', plugins_url('js/setup.js', __FILE__), array('jquery', 'pss_codemirror'));
+			
+			wp_enqueue_style('pss_codemirror_css', plugins_url('codemirror/codemirror.css', __FILE__));
+			
+			wp_enqueue_style('pss_codemirror_hint_css', plugins_url('codemirror/show-hint.css', __FILE__));
+		
+		}
+		
+	}
+
+	add_action('admin_enqueue_scripts', 'pss_add_cm_files');
+	
+	
 }
 
 // Site specific code.

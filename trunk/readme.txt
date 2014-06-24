@@ -43,7 +43,7 @@ If you have a feature idea, suggest it.
 
 **Notes**
 
-*   Style data is NOT removed on uninstall to prevent accidental deletion of important styles. The options to purge this data automatically is on the Roadmap as seen above. The meta_key used is pss_style if you need to delete it manually.
+*   Style data is NOT removed on uninstall to prevent accidental deletion of important styles. The option to purge this data automatically is on the Roadmap as seen above. The meta_key used is pss_style if you need to delete it manually.
 
 
 == Installation ==
@@ -55,13 +55,11 @@ Q. How do I use it?
 
 A. Simply install and activate the plugin. It will automatically add an additional box for CSS to be typed that will be injected into the page or post.
 
- 
 
 Q. How do I add the CSS box to custom post type?
 
 A. As of version 1.0, you can't. This feature is on the to-do list for the near future.
 
- 
 
 Q. Is there some way to format the CSS in the box to be easier to read?
 

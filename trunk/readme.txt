@@ -16,10 +16,20 @@ This plugin adds a box to your pages and posts allowing for page-specific or pos
 
 **Why Use It?**
 
-After developing quite a few WordPress websites, it seems to me that the style.css file gets bloated. If you add a style used on only one page, and then later that page is deleted, you're visitors now have to download those styles that aren't even used. It's wasteful, but maintaining a clean style.css file requires an active effort. This plugin solves that by attaching the these styles to the page of post, allowing them to be updated just like the content is and deleted with the page.
+After developing quite a few WordPress websites, it seems to me that the style.css file gets bloated. If you add a style used on only one page, and then later that page is deleted, you're visitors now have to download those styles that aren't even used. It's wasteful, but maintaining a clean style.css file requires an active effort. This plugin solves that by attaching the these styles to the page or post, allowing them to be updated just like the content is and deleted with the page.
 
 It keeps your style.css file clean and reduces unused style clutter.
 
+**New in Version 1.1**
+
+A new Fancy Editor has been added utilizing CodeMirror to enhance the experience of editing your styles. As of right now, it is disabled by default, but provides these features when enabled:
+
+*   Indenting
+*   Valid / Invalid Rule Highlighting
+*   Basic Auto-Complete (Ctrl+Shift)
+*   Plus a few other features.
+
+See the FAQs for info on the filter to enable the Fancy Editor.
 
 **What About Efficiency?**
 
@@ -33,8 +43,6 @@ The plugin is still rather simple. However, as I use it personally and at work, 
 The following features are currently planned.
 
 
-
-*   Improved CSS editor (Syntax highlighting, indenting).
 *   Custom post type support.
 *   Options page with the ability to purge the database of style data.
 
@@ -63,7 +71,23 @@ A. As of version 1.0, you can't. This feature is on the to-do list for the near 
 
 Q. Is there some way to format the CSS in the box to be easier to read?
 
-A. Not really. I intend on adding a special CSS editor box to replace the plain textbox so that there will be nice indenting and syntax highlighting. It should make the editing process a little easier on the eyes.
+A. Sure. There is an optional (disabled by default) ability to enable a "Fancy" Editor. This includes line numbers, highlighting, and some basic auto-complete. Right now, you have to enable this manually using the filter below. Note: The ability to toggle this will be built into a settings page that is coming in the next release or so.
+
+Filter (copy and paste into your themes functions.php file): 
+function enable_fancy_editor() {
+	return true;
+}
+add_filter('pss_fancy_editor', 'enable_fancy_editor'); 
+
+
+Q. Why is the Fancy Editor disabled by default?
+
+A. There are known plugin conflicts with many other plugins that utilize CodeMirror, the same utility used in the Fancy Editor. I am looking to remedy these conflicts but some of them are out of my control.
+
+
+Q. How do I use auto-complete in the editor?
+
+A. While typing a CSS property or value, you have to press Ctrl+Space. This will activate the auto-complete popup.
 
 == Changelog ==
 

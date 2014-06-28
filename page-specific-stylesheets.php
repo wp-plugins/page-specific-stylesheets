@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Page Specific Stylesheets
  * Description: Allows a simple method of keeping your styles.css file nice and clean by allowing page-specific CSS to be managed within that page. When the page is deleted, so is its CSS.
- * Version: 1.0.2
+ * Version: 1.1.0
  * Date: 24 May 2014
  * Author: Tyler Shaw
 **/

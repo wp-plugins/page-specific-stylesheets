@@ -3,7 +3,7 @@ Contributors: TylerShaw
 Tags: Stylesheet, CSS, Specific, Page, Post
 Requires at least: 3.5
 Tested up to: 3.9.1
-Stable tag: 1.0.2
+Stable tag: 1.1.0
 
 Adds a box allowing for the addition of page-specifc and post-specific CSS stylesheets. Reduces the need to edit and clutter up the style.css file.
 
@@ -90,6 +90,14 @@ Q. How do I use auto-complete in the editor?
 A. While typing a CSS property or value, you have to press Ctrl+Space. This will activate the auto-complete popup.
 
 == Changelog ==
+
+v1.1.0
+
+- Added a new optional "Fancy Editor" utilizing CodeMirror to enhance CSS editing.
+- Created a new `pss_fancy_editor` filter for enabling the optional editor. See FAQs for use details.
+- Various readme updates and corrections.
+
+Please Note: Enabling the Fancy Editor has the potential to cause conflict with other plugins that utilize CodeMirror. Updating will not enable the Fancy Editor by default.
 
 v1.0.2
 

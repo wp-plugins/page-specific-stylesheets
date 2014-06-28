@@ -80,7 +80,7 @@ if(is_admin()) {
 	// This should not occur if CodeMirror is disabled by the filter.
 	function pss_add_cm_files() {
 		
-		$fancy_editor = apply_filters('pss_fancy_editor', true);
+		$fancy_editor = apply_filters('pss_fancy_editor', false);
 		
 		if($fancy_editor === true) {
 		

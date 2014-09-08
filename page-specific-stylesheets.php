@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Page Specific Stylesheets
  * Description: Allows a simple method of keeping your styles.css file nice and clean by allowing page-specific CSS to be managed within that page. When the page is deleted, so is its CSS.
- * Version: 1.1.0
+ * Version: 1.1.1
  * Date: 24 May 2014
  * Author: Tyler Shaw
 **/
@@ -70,8 +70,7 @@ if(is_admin()) {
 	
 	
 	function pss_clean_deleted_post_meta($post_id) {
-		global $post;
-		delete_post_meta($post->ID, 'pss_style');
+		delete_post_meta($post_id, 'pss_style');
 	}
 	add_action('delete_post', 'pss_clean_deleted_post_meta');
 	

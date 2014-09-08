@@ -3,7 +3,7 @@ Contributors: TylerShaw
 Tags: Stylesheet, CSS, Specific, Page, Post
 Requires at least: 3.5
 Tested up to: 4.0
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 
 Adds a box allowing for the addition of page-specifc and post-specific CSS stylesheets. Reduces the need to edit and clutter up the style.css file.
 
@@ -90,6 +90,15 @@ Q. How do I use auto-complete in the editor?
 A. While typing a CSS property or value, you have to press Ctrl+Space. This will activate the auto-complete popup.
 
 == Changelog ==
+
+v1.1.2
+
+- Corrected text in the changelog.
+
+v1.1.1
+
+- Fixed a potential bug when emptying the post trash that could cause an error to be output or a white screen.
+- Ensured WordPress 4.0 compatibility.
 
 v1.1.0
 

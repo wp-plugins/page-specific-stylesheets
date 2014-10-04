@@ -25,7 +25,7 @@ if(is_admin()) {
 	// Add a link to plugin settings on the plugins page, next to the activate and edit links.
 	function pss_plugin_action_links($links, $file) {
 		if ($file == plugin_basename(__FILE__)) {
-			$pss_links = '<a href="'.get_admin_url().'options-general.php?page=page-specific-stylesheets/page-specific-stylesheets.php">'.__('Settings').'</a>';
+			$pss_links = '<a href="'.get_admin_url() . 'options-general.php?page=page-specific-stylesheets/page-specific-stylesheets.php">' . 'Settings' . '</a>';
 			// make the 'Settings' link appear first
 			array_unshift($links, $pss_links);
 		}

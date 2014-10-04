@@ -3,7 +3,7 @@ Contributors: TylerShaw
 Tags: Stylesheet, CSS, Specific, Page, Post
 Requires at least: 3.5
 Tested up to: 4.0
-Stable tag: 1.1.2
+Stable tag: 1.2.0
 
 Adds a box allowing for the addition of page-specifc and post-specific CSS stylesheets. Reduces the need to edit and clutter up the style.css file.
 
@@ -20,16 +20,9 @@ After developing quite a few WordPress websites, it seems to me that the style.c
 
 It keeps your style.css file clean and reduces unused style clutter.
 
-**New in Version 1.1**
+**New in Version 1.2**
 
-A new Fancy Editor has been added utilizing CodeMirror to enhance the experience of editing your styles. As of right now, it is disabled by default, but provides these features when enabled:
-
-*   Indenting
-*   Valid / Invalid Rule Highlighting
-*   Basic Auto-Complete (Ctrl+Shift)
-*   Plus a few other features.
-
-See the FAQs for info on the filter to enable the Fancy Editor.
+A new options page, allowing for the support of adding styles to any custom post type and purging of style data/plugin options on uninstall.
 
 **What About Efficiency?**
 
@@ -43,15 +36,14 @@ The plugin is still rather simple. However, as I use it personally and at work, 
 The following features are currently planned.
 
 
-*   Custom post type support.
-*   Options page with the ability to purge the database of style data.
+*   Additional plugin options.
 
 If you have a feature idea, suggest it.
 
 
 **Notes**
 
-*   Style data is NOT removed on uninstall to prevent accidental deletion of important styles. The option to purge this data automatically is on the Roadmap as seen above. The meta_key used is pss_style if you need to delete it manually.
+*   Style data and options are not deleted by default on uninstall. You must check the options on the plugin settings page to enable the deletion of this data.
 
 
 == Installation ==
@@ -66,7 +58,7 @@ A. Simply install and activate the plugin. It will automatically add an addition
 
 Q. How do I add the CSS box to custom post type?
 
-A. As of version 1.0, you can't. This feature is on the to-do list for the near future.
+A. The plugin has a settings page. You can check/uncheck various post types to enable to style editor box.
 
 
 Q. Is there some way to format the CSS in the box to be easier to read?
@@ -90,6 +82,13 @@ Q. How do I use auto-complete in the editor?
 A. While typing a CSS property or value, you have to press Ctrl+Space. This will activate the auto-complete popup.
 
 == Changelog ==
+
+v1.2.0
+
+- Added a plugin settings page.
+- Added custom post type support (this includes post type registered by other plugins, such as WooCommerce).
+- Added an option to purge the database of style data on uninstall.
+- Added an option to delete plugin settings from the database on uninstall.
 
 v1.1.2
 

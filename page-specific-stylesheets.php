@@ -11,7 +11,69 @@ define('PSS', true);
 
 // Admin specific code.
 if(is_admin()) {
+	
+	function pss_init() {
+		register_setting('pss_plugin_options', 'pss_options');
+	}
+	add_action('admin_init', 'pss_init');
+	
+	function pss_add_options_page() {
+		add_options_page('Page Specific Stylesheets Settings', 'Page Specific Stylesheets', 'manage_options', __FILE__, 'pss_render_form');
+	}
+	add_action('admin_menu', 'pss_add_options_page');
+	
+	// Add a link to plugin settings on the plugins page, next to the activate and edit links.
+	function pss_plugin_action_links($links, $file) {
+		if ($file == plugin_basename(__FILE__)) {
+			$pss_links = '<a href="'.get_admin_url().'options-general.php?page=page-specific-stylesheets/page-specific-stylesheets.php">'.__('Settings').'</a>';
+			// make the 'Settings' link appear first
+			array_unshift($links, $pss_links);
+		}
+		return $links;
+	}
+	add_filter('plugin_action_links', 'pss_plugin_action_links', 10, 2);
 
+	function pss_render_form() {
+		include __DIR__ . '/templates/settings.php';
+	}
+	
+	// Set up default plugin options.
+	function pss_default_options() {
+		
+		$pss_options = get_option('pss_options');
+		
+		if($pss_options === false) {
+			
+			$defaults = array(
+				'post_types' => array(
+					'page' => 'on',
+					'post' => 'on'
+				)
+			);
+			
+			update_option('pss_options', $defaults);
+		}
+		
+	}
+	register_activation_hook(__FILE__, 'pss_default_options');
+	
+	function pss_delete_plugin_cleanup() {
+		
+		$options = get_option('pss_options');
+		
+		// Clean out styles if that option is checked.
+		if(isset($options['delete_styles_on_uninstall'])) {
+			delete_post_meta_by_key('pss_style');
+		}
+		
+		// Clean out options if that option is checked.
+		if(isset($options['delete_options_on_uninstall'])) {
+			delete_option('pss_options');
+		}
+		
+	}
+	register_uninstall_hook(__FILE__, 'pss_delete_plugin_cleanup');
+	
 	// Define the function responsible for adding the stylesheet boxes.
 	function pss_add_meta_boxes() {
 		// Post meta box.

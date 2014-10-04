@@ -76,25 +76,20 @@ if(is_admin()) {
 	
 	// Define the function responsible for adding the stylesheet boxes.
 	function pss_add_meta_boxes() {
-		// Post meta box.
-        add_meta_box( 
-            'pss_style_box',
-            'Page Specific Stylesheet',
-			'pss_render_meta_box_content',
-			'post',
-			'advanced',
-			'high'
-        );
+		$options = get_option('pss_options');
 		
-		// Page meta box.
-        add_meta_box( 
-            'pss_style_box',
-			'Page Specific Stylesheet',
-			'pss_render_meta_box_content',
-			'page',
-			'advanced',
-			'high'
-        );
+		if(!empty($options['post_types'])) {
+			foreach($options['post_types'] as $key => $value) {
+				add_meta_box( 
+					'pss_style_box',
+					'Page Specific Stylesheet',
+					'pss_render_meta_box_content',
+					$key,
+					'advanced',
+					'high'
+				);
+			}
+		}
     }
 	
 	// Define the function responsible for displaying the stylesheet boxes.

@@ -57,8 +57,3 @@
 		</tr>
 	</table>	
 </form>
-
-Options:
-<pre>
-	<?php print_r(get_option('pss_options')); ?>
-</pre>

@@ -3,7 +3,7 @@ Contributors: TylerShaw
 Tags: Stylesheet, CSS, Specific, Page, Post
 Requires at least: 3.5
 Tested up to: 4.1
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 
 Adds a box allowing for the addition of page-specifc and post-specific CSS stylesheets. Reduces the need to edit and clutter up the style.css file.
 
@@ -79,7 +79,12 @@ add_filter('pss_fancy_editor', 'enable_fancy_editor');
 
 == Changelog ==
 
+v1.2.2
+
+- Various typos
+
 v1.2.1
+
 - Verfied compatibility with WordPress 4.1.
 - Moved project development to [GitHub](https://github.com/tyler-shaw/page-specific-stylesheets).
 - Minfied various CSS files that are unlikely to change.

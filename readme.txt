@@ -2,8 +2,8 @@
 Contributors: TylerShaw 
 Tags: Stylesheet, CSS, Specific, Page, Post
 Requires at least: 3.5
-Tested up to: 4.0
-Stable tag: 1.2.0
+Tested up to: 4.1
+Stable tag: 1.2.1
 
 Adds a box allowing for the addition of page-specifc and post-specific CSS stylesheets. Reduces the need to edit and clutter up the style.css file.
 
@@ -20,10 +20,6 @@ After developing quite a few WordPress websites, it seems to me that the style.c
 
 It keeps your style.css file clean and reduces unused style clutter.
 
-**New in Version 1.2**
-
-A new options page, allowing for the support of adding styles to any custom post type and purging of style data/plugin options on uninstall.
-
 **What About Efficiency?**
 
 There shouldn't be an issue with overhead from the plugin. Admin code is only executed in the admin panel and front end code is executed on the front end. If you're website has a large amount of page-specific styles within it that can be migrated into the plugin, it can boost performance by reducing the download size of your style.css file.
@@ -31,9 +27,9 @@ There shouldn't be an issue with overhead from the plugin. Admin code is only ex
 
 **Roadmap**
 
-The plugin is still rather simple. However, as I use it personally and at work, it will be maintained moving forward.
+This plugin will receive ongoing maintenance as WordPress evolves. No major features are planned, but I am entirely open to feature requests!
 
-The following features are currently planned.
+Feel free to suggest any feature you desire, or check out the code or contribute on [GitHub](https://github.com/tyler-shaw/page-specific-stylesheets), where the project is hosted.
 
 
 *   Additional plugin options.
@@ -51,19 +47,19 @@ If you have a feature idea, suggest it.
 Extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation and then activate the Plugin from Plugins page.
 == Frequently Asked Questions ==
 
-Q. How do I use it?
+**Q. How do I use it?**
 
-A. Simply install and activate the plugin. It will automatically add an additional box for CSS to be typed that will be injected into the page or post.
-
-
-Q. How do I add the CSS box to custom post type?
-
-A. The plugin has a settings page. You can check/uncheck various post types to enable to style editor box.
+**A.** Simply install and activate the plugin. It will automatically add an additional box for CSS to be typed that will be injected into the page or post.
 
 
-Q. Is there some way to format the CSS in the box to be easier to read?
+**Q. How do I add the CSS box to custom post type?**
 
-A. Sure. There is an optional (disabled by default) ability to enable a "Fancy" Editor. This includes line numbers, highlighting, and some basic auto-complete. Right now, you have to enable this manually using the filter below. Note: The ability to toggle this will be built into a settings page that is coming in the next release or so.
+**A.** The plugin has a settings page. You can check/uncheck various post types to enable to style editor box.
+
+
+**Q. Is there some way to format the CSS in the box to be easier to read?**
+
+**A.** Sure. There is an optional (disabled by default) ability to enable a "Fancy" Editor. This includes line numbers, highlighting, and some basic auto-complete. Right now, you have to enable this manually using the filter below. Note: The ability to toggle this will be built into a settings page that is coming in the next release or so.
 
 Filter (copy and paste into your themes functions.php file): 
 function enable_fancy_editor() {
@@ -72,16 +68,23 @@ function enable_fancy_editor() {
 add_filter('pss_fancy_editor', 'enable_fancy_editor'); 
 
 
-Q. Why is the Fancy Editor disabled by default?
+**Q. Why is the Fancy Editor disabled by default?**
 
-A. There are known plugin conflicts with many other plugins that utilize CodeMirror, the same utility used in the Fancy Editor. I am looking to remedy these conflicts but some of them are out of my control.
+**A.** There are known plugin conflicts with many other plugins that utilize CodeMirror, the same utility used in the Fancy Editor. I am looking to remedy these conflicts but some of them are out of my control.
 
 
-Q. How do I use auto-complete in the editor?
+**Q. How do I use auto-complete in the editor?**
 
-A. While typing a CSS property or value, you have to press Ctrl+Space. This will activate the auto-complete popup.
+**A.** While typing a CSS property or value, you have to press Ctrl+Space. This will activate the auto-complete popup.
 
 == Changelog ==
+
+v1.3.0
+- Verfied compatibility with WordPress 4.1.
+- Moved project development to [GitHub](https://github.com/tyler-shaw/page-specific-stylesheets).
+- Minfied various CSS files that are unlikely to change.
+- Various minor improvements to README file, etc.
+- Refactored some internal code to make the files neater.
 
 v1.2.0
 

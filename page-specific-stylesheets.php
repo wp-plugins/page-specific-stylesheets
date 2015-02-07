@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Page Specific Stylesheets
  * Description: Allows a simple method of keeping your styles.css file nice and clean by allowing page-specific CSS to be managed within that page. When the page is deleted, so is its CSS.
- * Version: 1.2.0
+ * Version: 1.2.1
  * Date: 24 May 2014
  * Author: Tyler Shaw
 **/
@@ -94,19 +94,8 @@ if(is_admin()) {
 	
 	// Define the function responsible for displaying the stylesheet boxes.
 	function pss_render_meta_box_content() {
-    	global $post;
-    	?>
-    	<div>
-    		<input type="hidden" id="post-id" value="<?php echo $post->ID ?>" />
-    		<textarea class="wp-editor-area" id="pss_textarea" name="pss_textarea"><?php echo get_post_meta($post->ID, 'pss_style', true); ?></textarea>
-    	</div>
-		<style>
-			#pss_textarea {
-				width: 100%;
-				min-height: 100px;
-			}
-		</style>
-    	<?php
+		global $post;
+    	include __DIR__ . '/templates/meta-box.php';
     }
 	
 	// Set up the action to create the stylesheet boxes.
@@ -153,7 +142,6 @@ if(is_admin()) {
 	}
 
 	add_action('admin_enqueue_scripts', 'pss_add_cm_files');
-	
 }
 
 // Site specific code.
@@ -168,12 +156,9 @@ if(!is_admin()) {
 		
 		$post_meta = get_post_meta($post->ID, 'pss_style', true);
 		
-		if(!empty($post_meta)) {
-			
-			echo '<style type="text/css">', $post_meta, '</style>';
-			
+		if(!empty($post_meta)) {	
+			echo '<style type="text/css">', $post_meta, '</style>';		
 		}
 	}
-	add_action('wp_head', 'pss_add_inline_stylesheet');
-		
+	add_action('wp_head', 'pss_add_inline_stylesheet');	
 }
